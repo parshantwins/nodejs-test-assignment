@@ -26,7 +26,7 @@ robot.prototype.move = function (tableTop) {
                this.x += 1;
            }
            break;
-        case 'SOUTH':
+        case 'WEST':
             if(this.x > 0) {
                 this.x -= 1;
             }
@@ -35,19 +35,19 @@ robot.prototype.move = function (tableTop) {
 }
 
 robot.prototype.rotate = function (newFacing) {
+    
     switch(this.facing) {
         case 'NORTH':
-           this.facing = (newFacing == 'LEFT')?'WEST' : 'EAST';
+           this.facing = (newFacing.trim() == 'LEFT') ? 'WEST' : 'EAST';
             break;
          case 'SOUTH':
-            this.facing = (newFacing == 'LEFT')?'EAST' : 'WEST';
+            this.facing = (newFacing.trim() == 'LEFT') ? 'EAST' : 'WEST';
              break;
- 
          case 'EAST':
-            this.facing = (newFacing == 'LEFT')?'NORTH' : 'SOUTH';
+            this.facing = (newFacing.trim() == 'LEFT') ? 'NORTH' : 'SOUTH';
             break;
-         case 'SOUTH':
-            this.facing = (newFacing == 'LEFT')?'SOUTH' : 'NORTH';
+         case 'WEST':
+            this.facing = (newFacing.trim() == 'LEFT') ? 'SOUTH' : 'NORTH';
              break;
     }
 }

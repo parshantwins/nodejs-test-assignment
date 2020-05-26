@@ -21,10 +21,10 @@ input.prototype.isValidFileCommand = function () {
 
 input.prototype.getCommandWithoutArguments = function(command) {
     if(command.indexOf(" ")== -1) {
-        return command;
+        return command.trim();
     }
 
-    return command.slice(0, command.indexOf(" "));
+    return command.trim().slice(0, command.indexOf(" "));
 }
 
 input.prototype.getCommandArguments = function(command) {
